@@ -25,15 +25,16 @@ class AuthController extends BaseAuthController
      */
     public function postLogin(Request $request)
     {
-        $credentials = $request->only([$this->username(), 'password']);
         $remember = $request->get('remember', false);
 
         /** @var \Illuminate\Validation\Validator $validator */
-        $validator = Validator::make($credentials,[
+        $validator = Validator::make($request->all(),[
             $this->username()   => 'required',
             'password'          => 'required',
             'g-recaptcha-response' => 'required|recaptchav3:login,0.3'
         ]);
+
+        $credentials = $request->only([$this->username(), 'password']);
 
         if ($validator->fails()) {
             return back()->withInput()->withErrors($validator);
