@@ -31,7 +31,7 @@ class AuthController extends BaseAuthController
         $validator = Validator::make($request->all(),[
             $this->username()   => 'required',
             'password'          => 'required',
-            'g-recaptcha-response' => 'required|recaptchav3:login,0.3'
+            'g-recaptcha-response' => 'required|recaptchav3:login,' . config('admin_nocaptcha.score', 0.3),
         ]);
 
         $credentials = $request->only([$this->username(), 'password']);

@@ -11,5 +11,8 @@ class NocaptchaServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'laravel-admin-nocaptcha');
+        $this->publishes([
+            __DIR__ . '/../config/' => config_path(),
+        ], 'laravel-admin-nocaptcha');
     }
 }
