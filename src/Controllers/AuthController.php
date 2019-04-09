@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends BaseAuthController
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getLogin()
     {
@@ -21,17 +21,17 @@ class AuthController extends BaseAuthController
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function postLogin(Request $request)
     {
         $remember = $request->get('remember', false);
 
         /** @var \Illuminate\Validation\Validator $validator */
-        $validator = Validator::make($request->all(),[
-            $this->username()   => 'required',
-            'password'          => 'required',
-            'g-recaptcha-response' => 'required|recaptchav3:login,' . config('admin_nocaptcha.score', 0.3),
+        $validator = Validator::make($request->all(), [
+            $this->username()      => 'required',
+            'password'             => 'required',
+            'g-recaptcha-response' => 'required|recaptchav3:login,'.config('admin_nocaptcha.score', 0.3),
         ]);
 
         $credentials = $request->only([$this->username(), 'password']);
