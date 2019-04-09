@@ -41,6 +41,7 @@ RECAPTCHAV3_LOGIN_SCORE=0.3 #如果你需要修改验证分数, 修改这里就�
 
 # laravel-admin-nocaptcha
 nocaptcha(recaptcha v3) implment for laravel-admin login
+
 [中文文档](#laravel-admin-nocaptcha)
 
 ## 安装
