@@ -3,6 +3,16 @@ laravel-admin 登陆集成 nocaptcha
 
 [Document in English](#laravel-admin-nocaptcha-1)
 
+
+[![travis.svg](https://img.shields.io/travis/xiaohuilam/laravel-admin-nocaptcha/master.svg?style=flat-square)](https://travis-ci.org/xiaohuilam/laravel-admin-nocaptcha)
+[![styleci.svg](https://github.styleci.io/repos/179709246/shield?branch=master)](https://github.styleci.io/repos/179709246)
+[![version.svg](https://img.shields.io/packagist/vpre/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://packagist.org/packages/xiaohuilam/laravel-admin-nocaptcha)
+[![issues-open.svg](https://img.shields.io/github/issues/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://github.com/xiaohuilam/laravel-admin-nocaptcha/issues)
+[![last-commit.svg](https://img.shields.io/github/last-commit/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://github.com/xiaohuilam/laravel-admin-nocaptcha/commits/)
+[![contributors.svg](https://img.shields.io/github/contributors/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://github.com/xiaohuilam/laravel-admin-nocaptcha/graphs/contributors)
+[![install-count.svg](https://img.shields.io/packagist/dt/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://packagist.org/packages/xiaohuilam/laravel-admin-nocaptcha)
+[![license.svg](https://img.shields.io/github/license/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](LICENSE)
+
 ## 安装
 **composer 安装**
 
@@ -43,6 +53,16 @@ RECAPTCHAV3_LOGIN_SCORE=0.3 #如果你需要修改验证分数, 修改这里就�
 nocaptcha(recaptcha v3) implment for laravel-admin login
 
 [中文文档](#laravel-admin-nocaptcha)
+
+
+[![travis.svg](https://img.shields.io/travis/xiaohuilam/laravel-admin-nocaptcha/master.svg?style=flat-square)](https://travis-ci.org/xiaohuilam/laravel-admin-nocaptcha)
+[![styleci.svg](https://github.styleci.io/repos/179709246/shield?branch=master)](https://github.styleci.io/repos/179709246)
+[![version.svg](https://img.shields.io/packagist/vpre/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://packagist.org/packages/xiaohuilam/laravel-admin-nocaptcha)
+[![issues-open.svg](https://img.shields.io/github/issues/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://github.com/xiaohuilam/laravel-admin-nocaptcha/issues)
+[![last-commit.svg](https://img.shields.io/github/last-commit/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://github.com/xiaohuilam/laravel-admin-nocaptcha/commits/)
+[![contributors.svg](https://img.shields.io/github/contributors/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://github.com/xiaohuilam/laravel-admin-nocaptcha/graphs/contributors)
+[![install-count.svg](https://img.shields.io/packagist/dt/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://packagist.org/packages/xiaohuilam/laravel-admin-nocaptcha)
+[![license.svg](https://img.shields.io/github/license/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](LICENSE)
 
 ## 安装
 **composer install**
