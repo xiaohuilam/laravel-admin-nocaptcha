@@ -27,7 +27,7 @@ RECAPTCHAV3_LOGIN_SCORE=0.3 #如果你需要修改验证分数, 修改这里就�
 
 ## 演示
 
-![screenshot.png](https://wantu-kw0-asset007-hz.oss-cn-hangzhou.aliyuncs.com/6XFwEaIPsSdHRu23Pg2.png)
+![screenshot.png](https://wantu-kw0-asset007-hz.oss-cn-hangzhou.aliyuncs.com/bJVb0m69U3bLO5e7Ymx.png?x-oss-process=image/resize,h_400)
 
 ## 授权
 
@@ -67,7 +67,7 @@ RECAPTCHAV3_LOGIN_SCORE=0.3 #Change only if you to adjust the score when validat
 
 ## Demo
 
-![screenshot.png](https://wantu-kw0-asset007-hz.oss-cn-hangzhou.aliyuncs.com/6XFwEaIPsSdHRu23Pg2.png)
+![screenshot.png](https://wantu-kw0-asset007-hz.oss-cn-hangzhou.aliyuncs.com/bJVb0m69U3bLO5e7Ymx.png?x-oss-process=image/resize,h_400)
 
 ## License
 
