@@ -39,12 +39,13 @@ RECAPTCHAV3_LOGIN_SCORE=0.3 #如果你需要修改验证分数, 修改这里就�
 
 ![screenshot.png](https://wantu-kw0-asset007-hz.oss-cn-hangzhou.aliyuncs.com/bJVb0m69U3bLO5e7Ymx.png?x-oss-process=image/resize,h_400)
 
-## 授权
-
-基于MIT开源
 
 ## 赞助
 
 **微信**
 
 ![donate.png](https://wantu-kw0-asset007-hz.oss-cn-hangzhou.aliyuncs.com/2GDNl84F6HW4PRGslxg.png?x-oss-process=image/resize,l_300)
+
+## 授权
+
+基于MIT开源
