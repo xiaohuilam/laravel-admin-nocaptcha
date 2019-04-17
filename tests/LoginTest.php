@@ -1,6 +1,7 @@
 <?php
 
 namespace LaravelAdminExt\Nocaptcha\Tests;
+
 use LaravelAdminExt\Nocaptcha\Tests\AbstractTestCase;
 
 class LoginTest extends AbstractTestCase
@@ -43,6 +44,6 @@ class LoginTest extends AbstractTestCase
         $this->assertEquals(302, $this->response->getStatusCode());
 
         $this->get('/admin/auth/login');
-        $this->see(trans( 'validation.recaptchav3'));
+        $this->see(trans('validation.recaptchav3'));
     }
 }
