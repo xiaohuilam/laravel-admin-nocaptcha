@@ -4,7 +4,7 @@ laravel-admin 登陆集成 nocaptcha
 [Document in English](README.md)
 
 
-[![travis.svg](https://img.shields.io/travis/xiaohuilam/laravel-admin-nocaptcha/master.svg?style=flat-square)](https://travis-ci.org/xiaohuilam/laravel-admin-nocaptcha)
+[![travis.svg](https://img.shields.io/travis/com/xiaohuilam/laravel-admin-nocaptcha/master.svg?style=flat-square)](https://travis-ci.com/xiaohuilam/laravel-admin-nocaptcha)
 [![styleci.svg](https://github.styleci.io/repos/179709246/shield?branch=master)](https://github.styleci.io/repos/179709246)
 [![version.svg](https://img.shields.io/packagist/vpre/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://packagist.org/packages/xiaohuilam/laravel-admin-nocaptcha)
 [![issues-open.svg](https://img.shields.io/github/issues/xiaohuilam/laravel-admin-nocaptcha.svg?style=flat-square)](https://github.com/xiaohuilam/laravel-admin-nocaptcha/issues)
