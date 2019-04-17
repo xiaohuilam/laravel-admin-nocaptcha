@@ -17,6 +17,9 @@ class LoginTest extends AbstractTestCase
         $this->dontSee(trans('validation.recaptchav3'));
     }
 
+    /**
+     * 空token断言
+     */
     public function testEmpty()
     {
         $this->visit('/admin/auth/login')
@@ -27,6 +30,9 @@ class LoginTest extends AbstractTestCase
         $this->see('The g-recaptcha-response field is required.');
     }
 
+    /**
+     * 无效token断言
+     */
     public function testBadToken()
     {
         $html = $this->visit('/admin/auth/login')->response->content();
