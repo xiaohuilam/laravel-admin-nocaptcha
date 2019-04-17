@@ -79,7 +79,7 @@ abstract class AbstractTestCase extends BaseTestCase
         $file = require __DIR__ . '/config/admin.php';
         $config->set('admin', $file);
 
-        foreach (array_dot(array_get($config, 'auth'), 'auth.') as $key => $value) {
+        foreach (array_dot(array_get($file, 'auth'), 'auth.') as $key => $value) {
             $config->set($key, $value);
         }
 
