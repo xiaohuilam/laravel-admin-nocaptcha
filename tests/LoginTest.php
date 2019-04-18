@@ -85,8 +85,8 @@ class LoginTest extends AbstractTestCase
         $headers = $this->response->headers;
         $location = $headers->get('location');
 
-        $this->assertStringContainsString('/admin', $location);
-        $this->assertStringNotContainsString('/login', $location);
+        $this->assertTrue(str_contains($location, '/admin'));
+        $this->assertFalse(str_contains($location, '/login'));
 
         $this->visit($location);
         $this->assertEquals(200, $this->response->getStatusCode());
