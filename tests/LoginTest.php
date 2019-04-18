@@ -3,6 +3,7 @@
 namespace LaravelAdminExt\Nocaptcha\Tests;
 
 use LaravelAdminExt\Nocaptcha\Tests\AbstractTestCase;
+use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 
 class LoginTest extends AbstractTestCase
 {
@@ -51,5 +52,42 @@ class LoginTest extends AbstractTestCase
 
         $this->get('/admin/auth/login');
         $this->see(trans('validation.recaptchav3'));
+    }
+
+    /**
+     * 有效token断言
+     */
+    public function testValidToken()
+    {
+        $html = $this->visit('/admin/auth/login')->response->content();
+        $html = explode('name="_token" value="', $html)[1];
+        $html = explode('"', $html, 2)[0];
+        $token = $html;
+        $data = [
+            'username' => 'admin',
+            'password' => 'admin',
+            'g-recaptcha-response' => 'valid_token',
+            '_token' => $token
+        ];
+
+        RecaptchaV3::shouldReceive('verify')
+            ->with('valid_token', 'login')
+            ->once()
+            ->andReturn(0.4);
+
+        $this->post('/admin/auth/login', $data);
+        $this->assertEquals(302, $this->response->getStatusCode());
+
+        /**
+         * @var \Symfony\Component\HttpFoundation\ResponseHeaderBag $headers
+         */
+        $headers = $this->response->headers;
+        $location = $headers->get('location');
+
+        $this->assertStringContainsString('/admin', $location);
+        $this->assertStringNotContainsString('/login', $location);
+
+        $this->visit($location);
+        $this->assertEquals(200, $this->response->getStatusCode());
     }
 }
