@@ -28,7 +28,8 @@ class LoginTest extends AbstractTestCase
             ->storeInput('password', 'admin')
             ->storeInput('g-recaptcha-response', null)
             ->submitForm(trans('Login'));
-        $this->see('The g-recaptcha-response field is required.');
+
+        $this->see(trans('validation.required', ['attribute' => 'g-recaptcha-response']));
     }
 
     /**
