@@ -8,13 +8,13 @@ use Illuminate\Support\Str;
 
 class LoginTest extends AbstractTestCase
 {
-    protected $_token = null;
+    protected $token = null;
 
     public function setUp()
     {
         parent::setUp();
-        $this->_token = Str::random();
-        $this->withSession(['_token', $this->_token]);
+        $this->token = Str::random();
+        $this->withSession(['_token', $this->token]);
     }
 
     /**
@@ -54,7 +54,7 @@ class LoginTest extends AbstractTestCase
             'username' => 'admin',
             'password' => 'admin',
             'g-recaptcha-response' => $challenge,
-            '_token' => $this->_token,
+            '_token' => $this->token,
         ];
 
         RecaptchaV3::shouldReceive('verify')
@@ -86,7 +86,7 @@ class LoginTest extends AbstractTestCase
             'username' => 'admin',
             'password' => 'admin',
             'g-recaptcha-response' => $challenge,
-            '_token' => $this->_token,
+            '_token' => $this->token,
         ];
 
         RecaptchaV3::shouldReceive('verify')
