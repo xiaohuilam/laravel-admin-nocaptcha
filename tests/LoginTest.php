@@ -8,6 +8,15 @@ use Illuminate\Support\Str;
 
 class LoginTest extends AbstractTestCase
 {
+    protected $_token = null;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->_token = Str::random();
+        $this->withSession(['_token', $this->_token]);
+    }
+
     /**
      * 断言登录页是否加载了recaptcha js
      */
@@ -38,17 +47,14 @@ class LoginTest extends AbstractTestCase
      */
     public function testBadToken()
     {
-        $html = $this->visit('/admin/auth/login')->response->content();
-        $html = explode('name="_token" value="', $html)[1];
-        $html = explode('"', $html, 2)[0];
-        $token = $html;
+        $this->visit('/admin/auth/login');
 
         $challenge = Str::random();
         $data = [
             'username' => 'admin',
             'password' => 'admin',
             'g-recaptcha-response' => $challenge,
-            '_token' => $token
+            '_token' => $this->_token,
         ];
         RecaptchaV3::shouldReceive('verify')
             ->with($challenge, 'login')
@@ -72,17 +78,14 @@ class LoginTest extends AbstractTestCase
      */
     public function testValidToken()
     {
-        $html = $this->visit('/admin/auth/login')->response->content();
-        $html = explode('name="_token" value="', $html)[1];
-        $html = explode('"', $html, 2)[0];
-        $token = $html;
+        $this->visit('/admin/auth/login');
 
         $challenge = Str::random();
         $data = [
             'username' => 'admin',
             'password' => 'admin',
             'g-recaptcha-response' => $challenge,
-            '_token' => $token
+            '_token' => $this->_token,
         ];
 
         RecaptchaV3::shouldReceive('verify')
