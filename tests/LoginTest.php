@@ -43,7 +43,7 @@ class LoginTest extends AbstractTestCase
         $html = explode('"', $html, 2)[0];
         $token = $html;
 
-        $challenge = 'invalid_token';
+        $challenge = Str::random();
         $data = [
             'username' => 'admin',
             'password' => 'admin',
@@ -77,7 +77,7 @@ class LoginTest extends AbstractTestCase
         $html = explode('"', $html, 2)[0];
         $token = $html;
 
-        $challenge = 'invalid_token';
+        $challenge = Str::random();
         $data = [
             'username' => 'admin',
             'password' => 'admin',
