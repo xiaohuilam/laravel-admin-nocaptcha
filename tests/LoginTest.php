@@ -56,6 +56,7 @@ class LoginTest extends AbstractTestCase
             'g-recaptcha-response' => $challenge,
             '_token' => $this->_token,
         ];
+
         RecaptchaV3::shouldReceive('verify')
             ->with($challenge, 'login')
             ->once()
