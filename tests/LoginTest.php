@@ -4,6 +4,7 @@ namespace LaravelAdminExt\Nocaptcha\Tests;
 
 use LaravelAdminExt\Nocaptcha\Tests\AbstractTestCase;
 use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
+use Illuminate\Support\Str;
 
 class LoginTest extends AbstractTestCase
 {
@@ -41,18 +42,29 @@ class LoginTest extends AbstractTestCase
         $html = explode('name="_token" value="', $html)[1];
         $html = explode('"', $html, 2)[0];
         $token = $html;
+
+        $challenge = 'invalid_token';
         $data = [
             'username' => 'admin',
             'password' => 'admin',
-            'g-recaptcha-response' => 'invalid_token',
+            'g-recaptcha-response' => $challenge,
             '_token' => $token
         ];
-        $this->post('/admin/auth/login', $data);
+        RecaptchaV3::shouldReceive('verify')
+            ->with($challenge, 'login')
+            ->once()
+            ->andReturn(false);
 
-        $this->assertEquals(302, $this->response->getStatusCode());
+        $this->post('/admin/auth/login', $data)
+            ->assertEquals(302, $this->response->getStatusCode());
 
-        $this->get('/admin/auth/login')
-            ->see(trans('validation.recaptchav3'));
+        /**
+         * @var \Symfony\Component\HttpFoundation\ResponseHeaderBag $headers
+         */
+        $headers = $this->response->headers;
+        $location = $headers->get('location');
+
+        $this->assertTrue(Str::endsWith($location, '/admin/auth/login'));
     }
 
     /**
@@ -64,15 +76,17 @@ class LoginTest extends AbstractTestCase
         $html = explode('name="_token" value="', $html)[1];
         $html = explode('"', $html, 2)[0];
         $token = $html;
+
+        $challenge = 'invalid_token';
         $data = [
             'username' => 'admin',
             'password' => 'admin',
-            'g-recaptcha-response' => 'valid_token',
+            'g-recaptcha-response' => $challenge,
             '_token' => $token
         ];
 
         RecaptchaV3::shouldReceive('verify')
-            ->with('valid_token', 'login')
+            ->with($challenge, 'login')
             ->once()
             ->andReturn(0.4);
 
@@ -85,10 +99,6 @@ class LoginTest extends AbstractTestCase
         $headers = $this->response->headers;
         $location = $headers->get('location');
 
-        $this->assertTrue(str_contains($location, '/admin'));
-        $this->assertFalse(str_contains($location, '/login'));
-
-        $this->visit($location)
-            ->assertEquals(200, $this->response->getStatusCode());
+        $this->assertTrue(Str::endsWith($location, '/admin'));
     }
 }
