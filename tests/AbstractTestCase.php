@@ -12,8 +12,6 @@ use LaravelAdminExt\Nocaptcha\NocaptchaServiceProvider;
 use Lunaweb\RecaptchaV3\Providers\RecaptchaV3ServiceProvider;
 use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 
-require __DIR__ . '/../vendor/encore/laravel-admin/tests/TestCase.php';
-
 abstract class AbstractTestCase extends BaseTestCase
 {
     /**

@@ -28,7 +28,10 @@
     "autoload-dev": {
         "psr-4": {
             "LaravelAdminExt\\Nocaptcha\\Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "vendor/encore/laravel-admin/tests/TestCase.php"
+        ]
     },
     "minimum-stability": "stable",
     "extra": {
