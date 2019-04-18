@@ -12,10 +12,10 @@ class LoginTest extends AbstractTestCase
      */
     public function testForm()
     {
-        $this->get('/admin/auth/login');
-        $this->see('/recaptcha/api.js');
-        $this->see(config('recaptchav3.sitekey'));
-        $this->dontSee(trans('validation.recaptchav3'));
+        $this->get('/admin/auth/login')
+            ->see('/recaptcha/api.js')
+            ->see(config('recaptchav3.sitekey'))
+            ->dontSee(trans('validation.recaptchav3'));
     }
 
     /**
@@ -51,8 +51,8 @@ class LoginTest extends AbstractTestCase
 
         $this->assertEquals(302, $this->response->getStatusCode());
 
-        $this->get('/admin/auth/login');
-        $this->see(trans('validation.recaptchav3'));
+        $this->get('/admin/auth/login')
+            ->see(trans('validation.recaptchav3'));
     }
 
     /**
@@ -76,8 +76,8 @@ class LoginTest extends AbstractTestCase
             ->once()
             ->andReturn(0.4);
 
-        $this->post('/admin/auth/login', $data);
-        $this->assertEquals(302, $this->response->getStatusCode());
+        $this->post('/admin/auth/login', $data)
+            ->assertEquals(302, $this->response->getStatusCode());
 
         /**
          * @var \Symfony\Component\HttpFoundation\ResponseHeaderBag $headers
@@ -88,7 +88,7 @@ class LoginTest extends AbstractTestCase
         $this->assertTrue(str_contains($location, '/admin'));
         $this->assertFalse(str_contains($location, '/login'));
 
-        $this->visit($location);
-        $this->assertEquals(200, $this->response->getStatusCode());
+        $this->visit($location)
+            ->assertEquals(200, $this->response->getStatusCode());
     }
 }
