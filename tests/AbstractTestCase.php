@@ -2,15 +2,15 @@
 
 namespace LaravelAdminExt\Nocaptcha\Tests;
 
-use Illuminate\Foundation\Application;
 use TestCase as BaseTestCase;
 use Illuminate\Filesystem\Filesystem;
+use Encore\Admin\AdminServiceProvider;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Database\Eloquent\Model;
-use Encore\Admin\AdminServiceProvider;
+use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 use LaravelAdminExt\Nocaptcha\NocaptchaServiceProvider;
 use Lunaweb\RecaptchaV3\Providers\RecaptchaV3ServiceProvider;
-use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 
 abstract class AbstractTestCase extends BaseTestCase
 {
