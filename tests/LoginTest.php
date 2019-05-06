@@ -43,6 +43,23 @@ class LoginTest extends AbstractTestCase
     }
 
     /**
+     * 禁用断言
+     */
+    public function testDisable()
+    {
+        if (file_exists($routes = admin_path('routes.php'))) {
+            require $routes;
+        }
+        $this->visit('/admin/auth/login')
+            ->storeInput('username', 'admin')
+            ->storeInput('password', 'admin')
+            ->dontSee('g-recaptcha-response')
+            ->submitForm(trans('Login'));
+
+        $this->dontSee(trans('validation.required', ['attribute' => 'g-recaptcha-response']));
+    }
+
+    /**
      * 无效token断言
      */
     public function testBadToken()
