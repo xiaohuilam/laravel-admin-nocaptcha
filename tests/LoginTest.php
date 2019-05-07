@@ -2,9 +2,9 @@
 
 namespace LaravelAdminExt\Nocaptcha\Tests;
 
-use LaravelAdminExt\Nocaptcha\Tests\AbstractTestCase;
-use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 use Illuminate\Support\Str;
+use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
+use LaravelAdminExt\Nocaptcha\Tests\AbstractTestCase;
 
 class LoginTest extends AbstractTestCase
 {

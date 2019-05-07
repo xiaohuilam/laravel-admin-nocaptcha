@@ -16,6 +16,7 @@ class NocaptchaServiceProvider extends ServiceProvider
         }
 
         $this->loadViewsFrom($extension->views(), 'laravel-admin-nocaptcha');
+        $this->mergeConfigFrom(__DIR__ . '/../config/admin_nocaptcha.php', 'admin_nocaptcha');
 
         $this->app->booted(function () {
             $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
