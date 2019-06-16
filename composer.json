@@ -3,8 +3,8 @@
     "description": "nocaptcha implements for laravel-admin when login",
     "type": "library",
     "require": {
-        "encore/laravel-admin": "~1.6",
-        "233sec/laravel-recaptchav3": "~0.7"
+        "encore/laravel-admin": ">=1.6",
+        "233sec/laravel-recaptchav3": ">=0.7"
     },
     "require-dev": {
         "phpunit/phpunit": "<8.0",
