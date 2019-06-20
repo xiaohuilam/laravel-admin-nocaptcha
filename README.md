@@ -40,6 +40,7 @@ RECAPTCHAV3_ORIGIN=#ussually you needn't set this var, but china user needs.
 ## Demo
 
 ![screenshot.png](https://wantu-kw0-asset007-hz.oss-cn-hangzhou.aliyuncs.com/bJVb0m69U3bLO5e7Ymx.png?x-oss-process=image/resize,h_400)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxiaohuilam%2Flaravel-admin-nocaptcha.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxiaohuilam%2Flaravel-admin-nocaptcha?ref=badge_shield)
 
 ## Donation
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/laravel)
@@ -47,3 +48,6 @@ RECAPTCHAV3_ORIGIN=#ussually you needn't set this var, but china user needs.
 ## License
 
 Open source under [MIT license](LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxiaohuilam%2Flaravel-admin-nocaptcha.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxiaohuilam%2Flaravel-admin-nocaptcha?ref=badge_large)
