@@ -35,7 +35,7 @@ RECAPTCHAV3_LOGIN_SCORE=0.3 #Change only if you to adjust the score when validat
 ```
 
 ```env
-RECAPTCHAV3_ORIGIN=#ussually you needn't set this var, but china user needs.
+RECAPTCHAV3_ORIGIN=#usually you needn't set this var, but china user needs.
 ```
 ## Demo
 
