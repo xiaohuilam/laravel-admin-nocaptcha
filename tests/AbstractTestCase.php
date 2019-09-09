@@ -2,6 +2,7 @@
 
 namespace LaravelAdminExt\Nocaptcha\Tests;
 
+use Illuminate\Support\Arr;
 use TestCase as BaseTestCase;
 use Illuminate\Filesystem\Filesystem;
 use Encore\Admin\AdminServiceProvider;
@@ -77,7 +78,7 @@ abstract class AbstractTestCase extends BaseTestCase
         $file = require __DIR__ . '/config/admin.php';
         $config->set('admin', $file);
 
-        foreach (array_dot(array_get($file, 'auth'), 'auth.') as $key => $value) {
+        foreach (Arr::dot(Arr::get($file, 'auth'), 'auth.') as $key => $value) {
             $config->set($key, $value);
         }
 
